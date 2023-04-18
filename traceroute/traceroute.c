@@ -751,6 +751,13 @@ static void print_addr (sockaddr_any *res) {
 
 
 static void print_probe (probe *pb) {
+
+	//ASSIGNMENT STARTS HERE
+	if (!pb->res.sa.sa_family){
+		return;
+	}
+	//ASSIGNMENT ENDS HERE
+
 	unsigned int idx = (pb - probes);
 	unsigned int ttl = idx / probes_per_hop + 1;
 	unsigned int np = idx % probes_per_hop;
